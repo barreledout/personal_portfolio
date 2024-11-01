@@ -23,11 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-backgroundColor text-fontColor">
+    <html lang="en" className="bg-backgroundColor text-fontColor [transition:background-color_0.3s_ease]">
       <body
-        className={`${satoshi.className} font-medium grid_background`}
+        className={`${satoshi.className} font-medium`}
       >
         <Navbar />
+        <div className='grid_background'></div>
         {children}
       </body>
     </html>
