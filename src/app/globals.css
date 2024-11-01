@@ -20,7 +20,7 @@
   --text-accent-color2: 217, 91%, 60%;
   --box-shadow: 1px 1px 4px 0, 0%, 83%;
   --hover-bg-color: 42, 35%, 93%;
-  --grid-color: hsl(0, 0%, 22%, 0.145);
+  --grid-color: hsl(0, 0%, 22%, 0.08);
 }
 
 [data-theme="dark"] {
@@ -35,60 +35,30 @@
   --box-shadow: none;
   --light-switch-icon-width: 20px;
   --hover-bg-color: 222, 13%, 19%;
-  --grid-color: hsl(0, 1%, 54%, 0.145);
+  --grid-color: hsl(0, 1%, 54%, 0.08);
 }
 
 .grid_background {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 500px;
-  max-height: 500px;
+  z-index: -1;
 }
 
 .grid_background::before {
   content: "";
   position: absolute;
   inset: 0;
-  
-  background-image: linear-gradient(var(--grid-color) 1px, transparent 1px), 
-                    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+
+  background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
   background-size: 30px 30px;
 
-  mask-image: radial-gradient(circle at center, black 0%, transparent 80%), 
-              linear-gradient(to bottom, black 60%, transparent 100%);
+  mask-image: radial-gradient(circle at center, black 0%, transparent 80%),
+    linear-gradient(to bottom, black 60%, transparent 100%);
   mask-composite: intersect;
   -webkit-mask-composite: intersect;
-  z-index: -1;
+  z-index: -2;
 }
-
-
-/* :root {
-  --background-color: #fdfbf7;
-  --container-color: white;
-  --container-accent-color: var--background-color;
-  --font-color: black;
-  --btn-accent-color: #333;
-  --text-accent-color: #008000;
-  --text-accent-color1: var--font-color;
-  --text-accent-color2: #3b82f6;
-  --box-shadow: 1px 1px 4px #d3d3d3;
-  --hover-bg-color: #f3efe6;
-  --grid-color: #38383825;
-}
-
-
-
-
-[data-theme="dark"] {
-  --background-color: #121212;
-  --container-color: #2b2f38;
-  --container-accent-color: var--background-color;
-  --font-color: rgba255, 255, 255, 0.87;
-  --border-color: var--font-color;
-  --btn-accent-color: var--font-color;
-  --text-accent-color1: #a0a0a0;
-  --text-accent-color2: #3b82f6;
-  --box-shadow: none;
-  --light-switch-icon-width: 20px;
-  --hover-bg-color: #2b2f38;
-  --grid-color: #8a888825;
-} */
