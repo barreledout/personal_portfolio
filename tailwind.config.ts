@@ -1,3 +1,4 @@
+import { transform } from "next/dist/build/swc/generated-native";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -9,6 +10,18 @@ const config: Config = {
   darkMode: ["class", '[data-theme="dark"]'],
   theme: {
     extend: {
+      keyframes: {
+        heroPopUp: {
+          "0%": {
+            opacity: "0%",
+          },
+          "100%": {
+            opacity: "100%",
+          },
+        },
+      }, animation: {
+        heroPopUp: 'heroPopUp 3s ease-in-out'
+      },
       colors: {
         accent: {},
         hover: {
