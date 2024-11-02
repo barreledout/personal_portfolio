@@ -14,9 +14,11 @@ const config: Config = {
         heroPopUp: {
           "0%": {
             opacity: "0%",
+            filter: "blur(2px)"
           },
           "100%": {
             opacity: "100%",
+            filter: "blur(0px)"
           },
         },
       }, animation: {
