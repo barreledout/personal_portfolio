@@ -1,43 +1,14 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
 import { TiLocationArrowOutline } from "react-icons/ti";
+import { useIntersectionObserver } from "../libs/hooks";
 
-const Hero = () => {
-  const targetRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (isInView) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsInView(true);
-            observer.unobserve(entry.target)
-          } else {
-            setIsInView(false);
-          }
-        });
-      },
-      { threshold: 1 }
-    );
-
-    if (targetRef.current) {
-      observer.observe(targetRef.current);
-    }
-
-    return () => {
-      if (targetRef.current) {
-        observer.unobserve(targetRef.current);
-      }
-    };
-  }, [isInView]);
+const Hero: React.FC = () => {
+  const { targetRef, isInView } = useIntersectionObserver();
 
   return (
     <div
-      className={`flex flex-col justify-center items-center text-center my-[7rem] ${
-        isInView ? "animate-[heroPopUp_1s_ease-in-out]" : ""
+      className={`flex flex-col justify-center items-center text-center my-[7rem] opacity-0 ${
+        isInView ? "animate-[heroPopUp_1s_ease-in-out_forwards] opacity-1" : ""
       }`}
       ref={targetRef}
     >
