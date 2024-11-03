@@ -1,27 +1,39 @@
-import { useState, useRef, useEffect, useReducer, use } from "react";
+import { useState, useRef, useEffect } from "react";
 
 // Intersection Observer Hook
-export const useIntersectionObserver = (threshold: number = 1) => {
+export const useIntersectionObserver = (
+  threshold: number = 1,
+  triggerOnce: boolean = false
+) => {
+  //Element to be observed
   const targetRef = useRef<HTMLDivElement>(null);
+
+  // Checks if the targetRef is in view or not.
   const [isInView, setIsInView] = useState<boolean>(false);
 
   useEffect(() => {
+    // If the element is already in view, don't setup the observer.
     if (isInView) return;
 
-    // Checks if the element is in the viewport.
+    // Set up the Intersection Observer if the element is in the viewport.
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsInView(true);
-            observer.unobserve(entry.target);
+            if (triggerOnce) {
+              observer.unobserve(entry.target); //Stop observing once it is in view
+            }
           } else {
-            setIsInView(false);
+            if (!triggerOnce) {
+              setIsInView(false);
+            }
           }
         });
       },
+
       // Threshold: How much the element needs to appear in the viewport -
-      // before it appears. In this case, threshold: 1 means that the -
+      // to required to trigger the observer. In this case, threshold: 1 means that the -
       // element needs to appear 100% on the screen.
       { threshold }
     );
@@ -37,7 +49,7 @@ export const useIntersectionObserver = (threshold: number = 1) => {
         observer.unobserve(targetRef.current);
       }
     };
-  }, [isInView]);
+  }, [threshold, triggerOnce]); // useEffect re-runs when the threshold of the element changes or if the triggerOnce argument is set to false.
 
   return { targetRef, isInView };
 };
