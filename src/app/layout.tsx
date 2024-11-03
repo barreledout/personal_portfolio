@@ -29,7 +29,7 @@ export default function RootLayout({
       >
         <Navbar />
         <div className='grid_background'></div>
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );
