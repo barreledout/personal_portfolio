@@ -24,7 +24,7 @@
 }
 
 [data-theme="dark"] {
-  --background-color: 0, 0%, 7%;
+  --background-color: 0, 0%, 9%;
   --container-color: 222, 13%, 19%;
   --container-accent-color: (var--background-color);
   --font-color: 0, 0%, 100%, 0.87;
@@ -62,3 +62,4 @@
   -webkit-mask-composite: intersect;
   z-index: -2;
 }
+
