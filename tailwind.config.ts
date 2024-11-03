@@ -14,15 +14,16 @@ const config: Config = {
         heroPopUp: {
           "0%": {
             opacity: "0%",
-            filter: "blur(2px)"
+            filter: "blur(2px)",
           },
           "100%": {
             opacity: "100%",
-            filter: "blur(0px)"
+            filter: "blur(0px)",
           },
         },
-      }, animation: {
-        heroPopUp: 'heroPopUp 3s ease-in-out'
+      },
+      animation: {
+        heroPopUp: "heroPopUp 3s ease-in-out forwards",
       },
       colors: {
         accent: {},
