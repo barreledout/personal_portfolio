@@ -21,18 +21,39 @@ const config: Config = {
             filter: "blur(0px)",
           },
         },
+        mainBlurToClear: {
+          "0%": {
+            filter: "blur(10px)",
+          },
+          "100%": {
+            filter: "blur(0)",
+          },
+        },
+        resumeAnimation: {
+          "0%": {
+            transform: "scale(1)",
+          },
+          "100%": {
+            transform: "scale(1.05)",
+          },
+        },
       },
       animation: {
         heroPopUp: "heroPopUp 3s ease-in-out forwards",
+        resumeAnimation: "resumeAnimation 3s. ease-in-out",
       },
       colors: {
         accent: {},
         hover: {
           hoverColor: "hsla(var(--hover-bg-color))",
+          textHoverWhite: "hsla(0, 0%, 100%)",
         },
-        backgroundColor: "hsla(var(--background-color))",
-        containerColor: "hsla(var(--container-color))",
-        fontColor: "hsla(var(--font-color))",
+        custom: {
+          fontColor: "hsla(var(--font-color))",
+          backgroundColor: "hsla(var(--background-color))",
+          containerColor: "hsla(var(--container-color))",
+          borderColor: "hsla(var(--border-color))"
+        },
       },
       fontFamily: {
         satoshi: [`var(--font-satoshi)`, "sans-serif"],

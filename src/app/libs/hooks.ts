@@ -22,10 +22,10 @@ export const useIntersectionObserver = (
           if (entry.isIntersecting) {
             setIsInView(true);
             if (triggerOnce) {
-              observer.unobserve(entry.target); //Stop observing once it is in view
+              observer.unobserve(entry.target); //Stop observing if we want to observe one time
             }
           } else {
-            if (!triggerOnce) {
+            if (!triggerOnce) { //Keep observing if triggerOnce is false.
               setIsInView(false);
             }
           }
