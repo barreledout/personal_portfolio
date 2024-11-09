@@ -3,15 +3,12 @@ import localFont from "next/font/local";
 import Navbar from "./components/Navbar";
 import BgGridDesign from "./components/BgGridDesign";
 import { Providers } from "./Providers";
+import { PageWrapper } from "./components/FramerMotion/PageWrapper";
 import "./globals.css";
 
 const satoshi = localFont({
   src: "./fonts/Satoshi-Variable.woff2", // Update this line
   variable: "--font-satoshi",
-});
-const satoshiItalic = localFont({
-  src: "./fonts/Satoshi-VariableItalic.woff2", // Update this line
-  variable: "--font-satoshi-italic",
 });
 
 export const metadata: Metadata = {
@@ -24,11 +21,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${satoshi.className}`} suppressHydrationWarning>
-      <body className="text-custom-fontColor ">
+      <body className={`bg-custom-backgroundColor [transition:background-color_0.4s_ease-in-out]`}>
         <Providers>
           <Navbar />
           <BgGridDesign />
-          <main>{children}</main>
+          <PageWrapper>
+            <main className="max-w-[750px]">{children}</main>
+          </PageWrapper>
         </Providers>
       </body>
     </html>
