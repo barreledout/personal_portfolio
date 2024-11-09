@@ -10,8 +10,8 @@ import { LuMoon } from "react-icons/lu";
 const Themebutton = () => {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
-  const [playOn] = useSound("/sound/btnClick2.mp3", { volume: 1 });
-  const [playOff] = useSound("/sound/btnClick1.mp3", { volume: 1 });
+  const [playOn] = useSound("/sound/btnClick3.mp3", { volume: 0.05 });
+  const [playOff] = useSound("/sound/btnClick4.mp3", { volume: 0.05 });
 
   useEffect(() => {
     setMounted(true);
