@@ -1,53 +1,50 @@
-import { PageWrapper } from "./FramerMotion/PageWrapper";
+"use client";
+import { motion } from "framer-motion";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+
+import { variants } from "./FramerMotion/PageWrapper";
 
 const Techstack = () => {
+  const stack: [string, string][] = [
+    ["typescript", "1 month"],
+    ["react", "1 month"],
+    ["tailwindcss", "1 month"],
+    ["nextjs", "1 month"],
+  ];
+
   return (
-    <div className="pt-[3rem] font-[400] mb-[10rem] select-none">
-      <PageWrapper delayAmt={.4}>
-        <h1 className="text-[2em] font-[400] py-5">Current Tech Stack</h1>
-        <div className="grid grid-cols-4 gap-[20px] justify-center">
-          {/* Typescript */}
-          <div className="aspect-square py-[15px] rounded hover:bg-slate-600">
-            <img
-              className="w-12 h-12 block "
-              src="/techstack_imgs/typescript.svg"
-              alt="Typescript"
-            />
-            <div className="pt-5 ">Typescript</div>
+    <motion.div variants={variants} className="font-[400]">
+      {/* possibly create a 'view more' to show more languages I know that popups a modal or new route? */}
+      <h1 className="text-[1.4em] font-[500] py-5">Current Tech Stack</h1>
 
-            {/* React */}
-          </div>
-          <div className="aspect-square py-[15px] rounded hover:bg-slate-600">
-            <img
-              className="w-12 h-12 block "
-              src="/techstack_imgs/react.svg "
-              alt="React"
-            />
-            <div className="pt-5">React</div>
-          </div>
-
-          {/* Tailwind CSS */}
-          <div className="aspect-square py-[15px] rounded hover:bg-slate-600">
-            <img
-              className="w-12 h-12 block "
-              src="/techstack_imgs/tailwindcss.svg "
-              alt="Tailwind CSS"
-            />
-            <div className="pt-5">Tailwind CSS</div>
-          </div>
-
-          {/* Next.js */}
-          <div className="aspect-square py-[15px] rounded hover:bg-slate-600">
-            <img
-              className="w-12 h-12 block "
-              src="/techstack_imgs/nextjs.svg "
-              alt="Next.js"
-            />
-            <div className="pt-5">Next.js</div>
-          </div>
-        </div>
-      </PageWrapper>
-    </div>
+      <ul className="grid grid-cols-4 items-center justify-between ">
+        {stack.map(([lang, exp], index) => (
+          <HoverCard key={index}>
+            <HoverCardTrigger className="">
+              <div className="flex items-center gap-2 w-[150px] bg-slate-400">
+                <img
+                  src={`/techstack_imgs/${lang}.svg`}
+                  alt={lang}
+                  className="w-12 h-12 object-contain my-auto"
+                />
+                <p>
+                  {lang === "tailwindcss"
+                    ? "Tailwind CSS"
+                    : lang === "nextjs"
+                    ? "Next.js"
+                    : lang.charAt(0).toUpperCase() + lang.slice(1, lang.length)}
+                </p>
+              </div>
+            </HoverCardTrigger>
+            <HoverCardContent>Experience: {exp}</HoverCardContent>
+          </HoverCard>
+        ))}
+      </ul>
+    </motion.div>
   );
 };
 
