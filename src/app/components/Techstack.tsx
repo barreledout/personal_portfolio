@@ -4,7 +4,7 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card";
+} from "@/app/components/ShadCn/hover-card";
 
 import { variants } from "./FramerMotion/PageWrapper";
 
