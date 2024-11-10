@@ -21,7 +21,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${satoshi.className}`} suppressHydrationWarning>
-      <body className={`bg-custom-backgroundColor [transition:background-color_0.4s_ease-in-out]`}>
+      <body className={`bg-custom-backgroundColor text-custom-fontColor [transition:background-color_0.4s_ease-in-out]`}>
         <Providers>
           <Navbar />
           <BgGridDesign />
