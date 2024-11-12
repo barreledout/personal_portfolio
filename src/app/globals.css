@@ -15,7 +15,7 @@ html {
 
 :root {
   --background-color: 40, 60%, 98%;
-  --container-color: 0, 0%, 10.98%;
+  --container-color: 40, 20%, 85%;
   --font-color: 0, 0%, 0%;
   --grid-color: hsl(0, 0%, 22%, 0.08);
 }
