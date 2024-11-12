@@ -15,33 +15,19 @@ html {
 
 :root {
   --background-color: 40, 60%, 98%;
-  --container-color: 0, 0%, 100%, 0.87;
-  --container-accent-color: (var--background-color);
+  --container-color: 0, 0%, 10.98%;
   --font-color: 0, 0%, 0%;
-  --border-color: 0, 0%, 7.06%;
-  --btn-accent-color: 0, 0%, 20%;
-  --text-accent-color: 120, 100%, 25%;
-  --text-accent-color1: (var--font-color);
-  --text-accent-color2: 217, 91%, 60%;
-  --box-shadow: 1px 1px 4px 0, 0%, 83%;
-  --hover-bg-color: 42, 35%, 93%;
   --grid-color: hsl(0, 0%, 22%, 0.08);
 }
 
 [data-theme="dark"] {
   --background-color: 0, 0%, 9%;
   --container-color: 222, 13%, 19%;
-  --container-accent-color: (var--background-color);
   --font-color: 0, 0%, 80%;
-  --border-color: 222, 13%, 19%;
-  --btn-accent-color: (var--font-color);
-  --text-accent-color1: 0, 0%, 63%;
-  --text-accent-color2: 217, 91%, 60%;
-  --box-shadow: none;
-  --light-switch-icon-width: 20px;
-  --hover-bg-color: 222, 13%, 19%;
   --grid-color: hsl(0, 1%, 54%, 0.08);
 }
+
+
 
 .grid_background {
   position: absolute;
