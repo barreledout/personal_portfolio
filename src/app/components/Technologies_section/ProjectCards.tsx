@@ -8,7 +8,7 @@ interface CardProps {
 const Cards = ({ language, exp }: CardProps) => {
   return (
     <div
-      className="w-[200px] bg-custom-containerColor/30 items-center rounded-md "
+      className="w-[200px] bg-custom-containerColor dark:bg-custom-containerColor/30  items-center rounded-md "
     >
       {/* inner card */}
       <div className="w-[190px] flex relative m-1 items-center">
