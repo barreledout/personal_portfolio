@@ -42,6 +42,7 @@ export const GitHub = ({
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
+      <span className="sr-only">Github</span>
     </a>
   );
 };
@@ -67,6 +68,7 @@ export const Email = ({
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
+      <span className="sr-only">Email</span>
     </a>
   );
 };
