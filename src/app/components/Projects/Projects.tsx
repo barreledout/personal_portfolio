@@ -12,8 +12,8 @@ const Projects = () => {
     >
       <PageWrapper delayAmt={1.2}>
         <h1 className="text-[2em] font-[400]">Projects</h1>
-        <div className="grid grid-cols-2 w-[800px] mt-6 gap-[10px]">
-          <ProjectsCards
+        <div className="grid grid-cols-2 mt-6 gap-[10px]">
+        <ProjectsCards
             img="/ProjectImgs/Screenshot 2024-11-03 180118.png"
             alt="Abode"
             link="https://github.com/barreledout"
