@@ -1,8 +1,14 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { LuGithub } from "react-icons/lu";
 import { MdAlternateEmail } from "react-icons/md";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../components/ShadCn/tooltip";
 
 interface SocialProps {
   IconClassName?: string;
@@ -24,9 +30,18 @@ export const GitHub = ({
       target="_blank"
       className={`${A_tagClassName}`}
     >
-      <LuGithub
-        className={`text-[25px] m-2 [transition:all_0.2s_ease-in-out] hover:scale-110 ${IconClassName}`}
-      />
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger>
+            <LuGithub
+              className={`text-[25px] m-2 [transition:all_0.2s_ease-in-out] hover:scale-110 ${IconClassName}`}
+            />
+          </TooltipTrigger>
+          <TooltipContent className="font-[500] dark:bg-custom-containerColor dark:border-0 dark:text-custom-fontColor">
+            <p>GitHub</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
     </a>
   );
 };
@@ -40,9 +55,18 @@ export const Email = ({
       href="mailto:rcalisaan7@gmail.com?subject=Hello!&body=Enter Message"
       className={`${A_tagClassName}`}
     >
-      <MdAlternateEmail
-        className={`text-[25px] m-2 [transition:all_0.2s_ease-in-out] hover:scale-110 ${IconClassName}`}
-      />
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger>
+            <MdAlternateEmail
+              className={`text-[25px] m-2 [transition:all_0.2s_ease-in-out] hover:scale-110 ${IconClassName}`}
+            />
+          </TooltipTrigger>
+          <TooltipContent className="font-[500] dark:bg-custom-containerColor dark:border-0 dark:text-custom-fontColor">
+            <p>Email</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
     </a>
   );
 };
@@ -52,7 +76,6 @@ export const Resume = ({ href = "", EmailClassName = "" }: ResumeProps) => {
 
   const handleMouseEnter = () => {
     setIsHover(true);
-
   };
 
   const handleMouseLeave = () => {

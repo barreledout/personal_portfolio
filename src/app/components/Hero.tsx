@@ -42,8 +42,8 @@ const Hero: React.FC = () => {
         </p>
         <div className="w-full">
           <div className="inline-flex items-center gap-3 pt-2 ">
-            <GitHub IconClassName="text-[#9CA3AF] hover:text-hover-textHoverWhite/80 ml-[-1px]" />
-            <Email IconClassName="text-[#9CA3AF] text-[27px] hover:text-hover-textHoverWhite/80 ml-[-1px]" />
+            <GitHub IconClassName="text-custom-fontColor/80 dark:text-[#9CA3AF] dark:hover:text-hover-textHoverWhite/80 ml-[-1px]" />
+            <Email IconClassName="text-custom-fontColor/80 text-[27px] dark:text-[#9CA3AF] dark:hover:text-hover-textHoverWhite/80 ml-[-1px]" />
             <Resume href="" EmailClassName="" />
           </div>
         </div>
