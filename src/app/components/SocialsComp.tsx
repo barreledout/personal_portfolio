@@ -9,6 +9,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../components/ShadCn/tooltip";
+import { cn } from "@/lib/utils";
 
 interface SocialProps {
   IconClassName?: string;
@@ -34,7 +35,7 @@ export const GitHub = ({
         <Tooltip>
           <TooltipTrigger>
             <LuGithub
-              className={`text-[25px] m-2 [transition:all_0.2s_ease-in-out] hover:scale-110 ${IconClassName}`}
+              className={cn(`text-[25px] m-2 [transition:all_0.2s_ease-in-out] hover:scale-110`, IconClassName)}
             />
           </TooltipTrigger>
           <TooltipContent className="font-[500] dark:bg-custom-containerColor dark:border-0 dark:text-custom-fontColor">
@@ -60,7 +61,7 @@ export const Email = ({
         <Tooltip>
           <TooltipTrigger>
             <MdAlternateEmail
-              className={`text-[25px] m-2 [transition:all_0.2s_ease-in-out] hover:scale-110 ${IconClassName}`}
+              className={cn(`text-[25px] m-2 [transition:all_0.2s_ease-in-out] hover:scale-110`, IconClassName)}
             />
           </TooltipTrigger>
           <TooltipContent className="font-[500] dark:bg-custom-containerColor dark:border-0 dark:text-custom-fontColor">
