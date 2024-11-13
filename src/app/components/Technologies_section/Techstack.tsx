@@ -1,12 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import { variants } from "../FramerMotion/PageWrapper";
-import Cards from "./ProjectCards";
+import Cards from "./TechCards";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Modal from "../Dialog";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -20,29 +20,37 @@ const Techstack = () => {
     ["nextjs", "1 month"],
   ];
 
-  const OtherStack: [string, string][] = [];
+  const OtherStack: [string, string][] = [
+    ["python", "1 year"],
+    ["javascript", "3 months"],
+    ["css", "4 months"],
+    ["html", "4 months"],
+  ];
 
   return (
     <motion.div
       variants={variants}
-      className="font-[400] text-custom-fontColor"
+      className="font-[400] text-custom-fontColor w-full"
     >
       {/* possibly create a 'view more' to show more languages I know that popups a modal or new route? */}
-      <div className="flex justify-between items-center relative">
-        <h1 className="text-[1.4em] font-[500] py-5">Current Tech Stack</h1>
-        <Dialog>
-          <DialogTrigger className="flex items-center gap-2 ">
-            View More <FaArrowRightLong />
-          </DialogTrigger>
-          <DialogContent className="flex flex-col justify-center bg-custom-containerColor text-custom-fontColor dark:border-0 ">
-            <DialogHeader>
-              <DialogTitle className="text-center">
-                Other Technologies
-              </DialogTitle>
-            </DialogHeader>
-            <div className="grid grid-cols-3"></div>
-          </DialogContent>
-        </Dialog>
+      <div className="flex justify-between items-center">
+        <h1 className="text-[1.4em] font-[500] mb-2">Current Tech Stack</h1>
+        <Modal
+          _ModalTitle="Other Technologies"
+          _ModalTrigger={
+            <span className="flex items-center gap-2 font-[500]">
+              View More <FaArrowRightLong />
+            </span>
+          }
+        >
+          <div className="grid grid-cols-3 items-center gap-2 ">
+            {OtherStack.map(([lang, exp], index) => (
+              <div key={index}>
+                <Cards language={lang} exp={exp} className="rounded-sm" />
+              </div>
+            ))}
+          </div>
+        </Modal>
       </div>
 
       <div className="grid grid-cols-3 items-center gap-2">
