@@ -4,13 +4,7 @@ import { variants } from "../FramerMotion/PageWrapper";
 import Cards from "./TechCards";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Modal from "../Dialog";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "../ShadCn/dialog";
+
 
 const Techstack = () => {
   const CurrentStack: [string, string][] = [
