@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { variants } from "../FramerMotion/PageWrapper";
 import Cards from "./TechCards";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Modal from "../Dialog";
-
+import Modal from "../Modal";
+import H1 from "../H1";
 
 const Techstack = () => {
   const CurrentStack: [string, string][] = [
@@ -28,7 +28,7 @@ const Techstack = () => {
     >
       {/* possibly create a 'view more' to show more languages I know that popups a modal or new route? */}
       <div className="flex justify-between items-center">
-        <h1 className="text-[1.4em] font-[500] mb-2">Current Tech Stack</h1>
+        <H1 className="">Current Tech Stack</H1>
         <Modal
           _ModalTitle="Other Technologies"
           _ModalTrigger={

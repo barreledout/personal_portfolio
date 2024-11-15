@@ -1,5 +1,6 @@
 "use client";
 import { TiLocationArrowOutline } from "react-icons/ti";
+import H1 from "./H1";
 import { GitHub, Email, Resume } from "./SocialsComp";
 import { motion } from "framer-motion";
 import { variants } from "./FramerMotion/PageWrapper";
@@ -7,9 +8,8 @@ import { variants } from "./FramerMotion/PageWrapper";
 
 const Hero: React.FC = () => {
   return (
-    <motion.div variants={variants} className="mt-[4rem] pb-[50px] mx-auto items-center">
+    <motion.div variants={variants} className="mt-[4rem] p mx-auto items-center">
       <div
-        
         className="inline-flex gap-5 items-center"
       >
         <img
@@ -29,9 +29,9 @@ const Hero: React.FC = () => {
         </div>
       </div>
       <div className="mt-[2rem] flex flex-col ">
-        <h1 className="text-[1.5em] pb-[5px] font-[500] ">
+        <H1 className="mb-1.5">
           About Me
-        </h1>
+        </H1>
 
         {/* Make a better bio */}
         <p className="text-pretty font-[400] text-[1.1em]">
