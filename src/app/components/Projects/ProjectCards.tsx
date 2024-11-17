@@ -7,7 +7,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 interface ProjectProps {
   children: {
     description: React.ReactNode;
-    stack: React.ReactNode;
+    stack?: string[];
   };
   alt: string;
   img: string;
@@ -83,12 +83,12 @@ const ProjectsCards = ({
       {" "}
       <Drawer.Root container={container} direction="right" handleOnly={true}>
         <Drawer.Trigger
-          className="group m-2 p-[2px] rounded-sm text-custom-fontColor font-[700] outline-none cursor-pointer"
+          className=" m-2 p-[2px] rounded-sm text-custom-fontColor font-[700] outline-none cursor-pointer"
           onClick={handleDrawer}
         >
-          <span className="group-hover:gap-3 group-hover:text-custom-fontColor/70 flex items-center gap-1 [transition:all_0.1s_ease-in-out]">
+          <span className="group flex items-center gap-1">
             Learn More
-            <FaArrowRightLong className="w-6" />
+            <FaArrowRightLong className="opacity-0 group-hover:animate-learnMore" />
           </span>
         </Drawer.Trigger>
 
@@ -99,15 +99,28 @@ const ProjectsCards = ({
             ref={drawerRef}
           >
             <div className="flex flex-col text-center m-3">
-              <Drawer.Title className="text-left font-[700] text-[2em]">
+              <Drawer.Title className="text-left font-[700] text-[2em] ">
                 {title(alt)}
               </Drawer.Title>
-              <Drawer.Description className="text-left font-[500]" asChild>
+              <Drawer.Description
+                className="text-left font-[500] dark:text-custom-accentFontColor/80"
+                asChild
+              >
                 {children.description}
               </Drawer.Description>
-              <div className="mt-4 w-full bg-red-300 text-left">
-                <h2>Stack:</h2>
-                {children.stack}
+              <div className=" mt-4 w-full text-left">
+                <h2 className="font-[500] text-[1.1em]">Technologies Used:</h2>
+                <div className="mt-3">
+                  <ul className="flex">
+                    {children.stack?.map((node, index) => (
+                      <li key={index} className="list-none items-center">
+                        <span className="font-[500] text-center text-[.9em]  p-[5px] rounded-sm  ">
+                          {node}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
 
