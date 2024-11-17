@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import ProjectsCards from "./ProjectCards";
+import H1 from "../H1";
 import { motion } from "framer-motion";
 import { variants } from "../FramerMotion/PageWrapper";
 
@@ -10,7 +11,7 @@ const Projects = () => {
   return (
     <motion.div variants={variants} className="w-full mb-20">
       <div className="flex justify-between items-center gap-2">
-        <h1 className="text-[1.5em] font-[500] mb-2">Current Projects</h1>
+        <H1 className="">Current Projects</H1>
       </div>
       <div className="flex flex-col items-center gap-10 w-full">
         <ProjectsCards
@@ -26,6 +27,9 @@ const Projects = () => {
                 on comparable properties nearby.
               </p>
             ),
+            stack: (
+              <p>poop</p>
+            ),
           }}
         </ProjectsCards>
       </div>
@@ -34,32 +38,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-{
-  /* <div
-      className="flex flex-col justify-center text-center mt-[5rem] mb-[10rem]"
-      id="projects"
-    >
-      <PageWrapper delayAmt={1.2}>
-        <h1 className="text-[2em] font-[400]">Projects</h1>
-        <div className="grid grid-cols-2 mt-6 gap-[10px]">
-        <ProjectsCards
-            img="/ProjectImgs/Screenshot 2024-11-03 180118.png"
-            alt="Abode"
-            link="https://github.com/barreledout"
-          >
-            <H1>Abode</H1>
-            <Stack stack={["html", "css", "javascript", "nodejs"]} />
-          </ProjectsCards>
-
-          <ProjectsCards
-            img="/ProjectImgs/Screenshot 2024-11-03 180118.png"
-            alt="Abode"
-            link="https://github.com/barreledout"
-          >
-            <H1>Abode</H1>
-          </ProjectsCards>
-        </div>
-      </PageWrapper>
-    </div> */
-}

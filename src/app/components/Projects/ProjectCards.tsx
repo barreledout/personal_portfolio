@@ -1,13 +1,13 @@
 "use client";
 import { useRef, useState, useEffect, SyntheticEvent } from "react";
 import { cn } from "@/lib/utils";
-import { Button } from "../ShadCn/button";
-
 import { Drawer } from "vaul";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 interface ProjectProps {
   children: {
     description: React.ReactNode;
+    stack: React.ReactNode;
   };
   alt: string;
   img: string;
@@ -77,30 +77,38 @@ const ProjectsCards = ({
 
   return (
     <div
-      className="w-full rounded-md text-black relative overflow-hidden bg-custom-containerColor"
+      className="w-full rounded-md text-black relative overflow-hidden border-[1px] dark:border-custom-borderColor/10 dark:[box-shadow:inset_0_5px_10px_rgba(154,160,185,.05),inset_0_15px_40px_rgba(166,173,201,.02)] "
       ref={ref}
     >
+      {" "}
       <Drawer.Root container={container} direction="right" handleOnly={true}>
         <Drawer.Trigger
-          className="my-2 rounded-tl-sm text-custom-fontColor font-[700] bg-custom-containerColor outline-none cursor-pointer"
+          className="group m-2 p-[2px] rounded-sm text-custom-fontColor font-[700] outline-none cursor-pointer"
           onClick={handleDrawer}
         >
-          <span className="m-2 p-2">Learn More</span>
+          <span className="group-hover:gap-3 group-hover:text-custom-fontColor/70 flex items-center gap-1 [transition:all_0.1s_ease-in-out]">
+            Learn More
+            <FaArrowRightLong className="w-6" />
+          </span>
         </Drawer.Trigger>
 
         <Drawer.Portal>
           <Drawer.Overlay />
           <Drawer.Content
-            className="absolute z-10 top-0 right-0 h-full w-[50%] rounded-l-[10px] flex flex-col bg-blue-300/100"
+            className="absolute z-10 top-0 right-0 h-full w-[50%] rounded-l-[10px] flex flex-col bg-custom-drawerColor/100 dark:bg-custom-drawerColor dark:text-custom-fontColor"
             ref={drawerRef}
           >
             <div className="flex flex-col text-center m-3">
               <Drawer.Title className="text-left font-[700] text-[2em]">
                 {title(alt)}
               </Drawer.Title>
-              <Drawer.Description className="flex text-left font-[500]" asChild>
+              <Drawer.Description className="text-left font-[500]" asChild>
                 {children.description}
               </Drawer.Description>
+              <div className="mt-4 w-full bg-red-300 text-left">
+                <h2>Stack:</h2>
+                {children.stack}
+              </div>
             </div>
 
             <div className="flex justify-center absolute bottom-0 m-auto w-full">
@@ -123,7 +131,6 @@ const ProjectsCards = ({
           </Drawer.Content>
         </Drawer.Portal>
       </Drawer.Root>
-
       {/* Inner container */}
       <div className="flex flex-col m-2 z-[-10]">
         {/* Image container */}
