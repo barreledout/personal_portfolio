@@ -2,7 +2,9 @@
 import { useRef, useState, useEffect, SyntheticEvent } from "react";
 import { cn } from "@/lib/utils";
 import { Drawer } from "vaul";
+import HoverMoreBtn from "../HoverMoreBtn";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { GeistSans } from "geist/font/sans";
 
 interface ProjectProps {
   children: {
@@ -86,10 +88,7 @@ const ProjectsCards = ({
           className=" m-2 p-[2px] rounded-sm text-custom-fontColor font-[700] outline-none cursor-pointer"
           onClick={handleDrawer}
         >
-          <span className="group flex items-center gap-1">
-            Learn More
-            <FaArrowRightLong className="opacity-0 group-hover:animate-learnMore" />
-          </span>
+        <HoverMoreBtn title="Learn More"/>
         </Drawer.Trigger>
 
         <Drawer.Portal>
@@ -103,7 +102,7 @@ const ProjectsCards = ({
                 {title(alt)}
               </Drawer.Title>
               <Drawer.Description
-                className="text-left font-[500] dark:text-custom-accentFontColor/80"
+                className={`text-left ${GeistSans.className} font-[300] dark:text-custom-accentFontColor/80`}
                 asChild
               >
                 {children.description}
