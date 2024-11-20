@@ -70,13 +70,23 @@ const config: Config = {
         learnMore: {
           "0%": {
             transform: "translateX(-10px)",
-            opacity: "0"
+            opacity: "0",
           },
           "100%": {
             transform: "translateX(6px)",
-            opacity: "1"
-          }
-        }
+            opacity: "1",
+          },
+        },
+        learnMoreExit: {
+          "0%": {
+            transform: "translateX(6px)",
+            opacity: "1",
+          },
+          "100%": {
+            transform: "translateX(-10px)",
+            opacity: "0",
+          },
+        },
       },
       animation: {
         heroPopUp: "heroPopUp 3s ease-in-out forwards",
@@ -85,7 +95,8 @@ const config: Config = {
           "shimmer-slide var(--speed) ease-in-out infinite alternate",
         "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
         shine: "shine var(--duration) infinite linear",
-        learnMore: "learnMore 0.3s ease-in-out forwards",
+        learnMore: "learnMore 0.2s ease-in-out forwards",
+        learnMoreExit: "learnMoreExit 0.2s ease-in-out forwards",
       },
       colors: {
         accent: {
@@ -141,9 +152,13 @@ const config: Config = {
           "5": "hsl(var(--chart-5))",
         },
       },
+      backgroundImage: {
+        "custom-gradient-light": "linear-gradient(140deg, #fdfcfb, #e2d1c3)", 
+        "custom-gradient-dark": "linear-gradient(250deg, #4d7dcb, #5e8ad2, #565e6b)",
+      },
       fontFamily: {
         satoshi: [`var(--font-satoshi)`, "sans-serif"],
-        satoshiItalic: [`var(--font-satoshiItalic)`, "sans-serif"],
+        geistSans: ["var(--font-geist-sans)"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -155,3 +170,4 @@ const config: Config = {
   plugins: [require("tailwindcss-animate")],
 };
 export default config;
+
