@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { GeistSans } from "geist/font/sans";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import BgGridDesign from "./components/BgGridDesign";
 import { Providers } from "./Providers";
 import { PageWrapper } from "./components/FramerMotion/PageWrapper";
@@ -25,10 +25,11 @@ export default function RootLayout({
       <body className={`bg-custom-backgroundColor text-custom-fontColor `}>
         <Providers>
           <Navbar />
-          <BgGridDesign />
+          {/* <BgGridDesign /> */}
           <PageWrapper>
-            <main className="max-w-[750px]">{children}</main>
+            <main className="">{children}</main>
           </PageWrapper>
+          <Footer />
         </Providers>
       </body>
     </html>
