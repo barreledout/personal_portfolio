@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { LuGithub } from "react-icons/lu";
-import { MdAlternateEmail } from "react-icons/md";
+import { AtSign } from "lucide-react";
+
 import {
   Tooltip,
   TooltipContent,
@@ -35,7 +36,11 @@ export const GitHub = ({
         <Tooltip>
           <TooltipTrigger>
             <LuGithub
-              className={cn(`text-[25px] m-2 [transition:all_0.2s_ease-in-out] hover:scale-110`, IconClassName)}
+              className={cn(
+                `text-[25px] m-2 [transition:all_0.2s_ease-in-out] hover:scale-110`,
+                IconClassName
+              )}
+              strokeWidth={"2px"}
             />
           </TooltipTrigger>
           <TooltipContent className="font-[500] dark:bg-custom-containerColor dark:border-0 dark:text-custom-fontColor">
@@ -60,8 +65,12 @@ export const Email = ({
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
-            <MdAlternateEmail
-              className={cn(`text-[25px] m-2 [transition:all_0.2s_ease-in-out] hover:scale-110`, IconClassName)}
+            <AtSign
+              className={cn(
+                `text-[25px] m-2 [transition:all_0.2s_ease-in-out] hover:scale-110`,
+                IconClassName
+              )}
+              strokeWidth={"2px"}
             />
           </TooltipTrigger>
           <TooltipContent className="font-[500] dark:bg-custom-containerColor dark:border-0 dark:text-custom-fontColor">

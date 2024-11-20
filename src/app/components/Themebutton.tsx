@@ -4,8 +4,8 @@ import { useTheme } from "next-themes";
 
 import useSound from "use-sound";
 
-import { IoSunnyOutline } from "react-icons/io5";
-import { LuMoon } from "react-icons/lu";
+import { Sun, Moon } from "lucide-react";
+
 
 const Themebutton = () => {
   const [mounted, setMounted] = useState(false);
@@ -21,9 +21,9 @@ const Themebutton = () => {
     const theme = localStorage.getItem("theme");
 
     if (theme === "dark") {
-      return <IoSunnyOutline className="w-[40px] h-[50px] " />;
+      return <Sun className="w-[40px] h-[50px] " />;
     } else if (theme === "light" || "null") {
-      return <LuMoon className="w-[40px] h-[40px]" />;
+      return <Moon className="w-[40px] h-[40px]" />;
     }
   }
 
@@ -42,17 +42,19 @@ const Themebutton = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="flex justify-center items-center bg-transparent border-[none] w-[40px] h-[40px] cursor-pointer"
+      className="flex justify-center items-center bg-transparent border-[none] w-[40px] h-[40px] cursor-pointer outline-none"
     >
       {resolvedTheme === "light" ? (
-        <LuMoon
+        <Moon
           className="text-fontColor [transition:color_0.2s_ease-in-out] hover:text-purple-500"
-          style={{ fontSize: "25px" }}
+          strokeWidth={"1.8px"}
+          size={"24px"}
         />
       ) : (
-        <IoSunnyOutline
+        <Sun
           className="text-custom-fontColor [transition:color_0.2s_ease-in-out] pt-[2px] hover:text-yellow-500"
-          style={{ fontSize: "30px" }}
+          strokeWidth={"2px"}
+          size={"25px"}
         />
       )}
     </button>
