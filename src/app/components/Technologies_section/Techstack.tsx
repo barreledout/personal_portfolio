@@ -28,7 +28,6 @@ const Techstack = () => {
       className="font-[400] text-custom-fontColor w-full"
     >
       <div className="max-w-[650px]">
-        {/* possibly create a 'view more' to show more languages I know that popups a modal or new route? */}
         <div className="flex justify-between items-center">
           <H1 className="">Current Tech Stack</H1>
           <Modal
