@@ -1,11 +1,13 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { cn } from "@/lib/utils";
 
 interface HoverMoreBtnProps {
   title: string;
+  className?: string;
 }
 
-const HoverMoreBtn = ({ title }: HoverMoreBtnProps) => {
+const HoverMoreBtn = ({ title, className }: HoverMoreBtnProps) => {
   const [isHovering, setIsHovering] = useState<boolean>(false);
 
   const handleMouseEnter = () => {
@@ -18,7 +20,7 @@ const HoverMoreBtn = ({ title }: HoverMoreBtnProps) => {
 
   return (
     <span
-      className="group flex items-center gap-1"
+      className={cn(`group flex items-center gap-1 font-[500]`, className)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
