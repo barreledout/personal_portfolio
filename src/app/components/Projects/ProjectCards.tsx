@@ -13,6 +13,7 @@ interface ProjectProps {
   };
   alt: string;
   img: string;
+  status: string;
   gitHubLink: string;
   demoLink?: string;
 }
@@ -21,6 +22,7 @@ const ProjectsCards = ({
   children,
   img,
   alt,
+  status,
   gitHubLink,
   demoLink,
 }: ProjectProps) => {
@@ -79,22 +81,30 @@ const ProjectsCards = ({
 
   return (
     <div
-      className="w-full rounded-md text-black relative overflow-hidden border-[1px] dark:border-custom-borderColor/10 dark:[box-shadow:inset_0_5px_10px_rgba(154,160,185,.05),inset_0_15px_40px_rgba(166,173,201,.02)] "
+      className="w-full rounded-md text-black relative overflow-hidden border-[1px] dark:border-custom-borderColor/10" //dark:[box-shadow:inset_0_5px_10px_rgba(154,160,185,.05),inset_0_15px_40px_rgba(166,173,201,.02)]
       ref={ref}
     >
       {" "}
       <Drawer.Root container={container} direction="right" handleOnly={true}>
-        <Drawer.Trigger
-          className=" m-2 p-[2px] rounded-sm text-custom-fontColor font-[700] outline-none cursor-pointer"
-          onClick={handleDrawer}
-        >
-        <HoverMoreBtn title="Learn More"/>
-        </Drawer.Trigger>
+        <div className="w-full relative flex items-center">
+          <Drawer.Trigger
+            className=" m-2 p-[2px] text-custom-fontColor outline-none cursor-pointer w-[110px]"
+            onClick={handleDrawer}
+          >
+            <HoverMoreBtn
+              title="Learn More"
+              className={`${GeistSans.className}`}
+            />
+          </Drawer.Trigger>
+          <span
+            className={`absolute right-5 text-custom-fontColor ${GeistSans.className}`}
+          ></span>
+        </div>
 
         <Drawer.Portal>
           <Drawer.Overlay />
           <Drawer.Content
-            className="absolute z-10 top-0 right-0 h-full w-[50%] rounded-l-[10px] flex flex-col bg-custom-drawerColor/100 dark:bg-custom-drawerColor dark:text-custom-fontColor"
+            className="absolute z-10 top-0 right-0 h-full w-[50%] rounded-l-lg flex flex-col bg-custom-gradient-light dark:bg-custom-gradient-dark dark:text-custom-fontColor overflow-hidden group"
             ref={drawerRef}
           >
             <div className="flex flex-col text-center m-3">
@@ -102,29 +112,68 @@ const ProjectsCards = ({
                 {title(alt)}
               </Drawer.Title>
               <Drawer.Description
-                className={`text-left ${GeistSans.className} font-[300] dark:text-custom-accentFontColor/80`}
+                className={`text-left ${GeistSans.className} font-[300] dark:text-custom-accentFontColor`}
                 asChild
               >
                 {children.description}
               </Drawer.Description>
-              <div className=" mt-4 w-full text-left">
-                <h2 className="font-[500] text-[1.1em]">Technologies Used:</h2>
+              <div className="mt-4 w-full text-left">
+                <h2 className="font-[600] text-[1.1em]">Stack Used:</h2>
                 <div className="mt-3">
-                  <ul className="flex">
-                    {children.stack?.map((node, index) => (
-                      <li key={index} className="list-none items-center">
-                        <span className="font-[500] text-center text-[.9em]  p-[5px] rounded-sm  ">
-                          {node}
-                        </span>
-                      </li>
-                    ))}
+                  <ul className="flex relative w-full">
+                    <li
+                      className={`w-11 rounded-sm absolute top-0 rotate-[-4deg] [transition:all_0.1s_ease-in-out] group-hover:rotate-0`}
+                    >
+                      <div
+                        className={`w-10 h-10 p-[5px] bg-red-200/20 rounded-lg`}
+                      >
+                        <img
+                          src="/techstack_imgs/html.svg"
+                          alt=""
+                          className="w-full h-full"
+                        />
+                      </div>
+                    </li>
+                    <li
+                      className={`w-11 rounded-sm absolute top-0 left-5 rotate-[1deg] [transition:all_0.1s_ease-in-out] group-hover:rotate-0 group-hover:translate-x-[28px]`}
+                    >
+                      <div className="w-10 h-10 p-[5px] bg-red-200/20 rounded-lg">
+                        <img
+                          src="/techstack_imgs/css.svg"
+                          alt=""
+                          className="w-full h-full"
+                        />
+                      </div>
+                    </li>
+                    <li
+                      className={`w-11 rounded-sm absolute top-0 left-10 rotate-4 [transition:all_0.1s_ease-in-out] group-hover:rotate-0 group-hover:translate-x-[56px]`}
+                    >
+                      <div className="w-10 h-10 p-1 bg-red-200/20 rounded-lg">
+                        <img
+                          src="/techstack_imgs/javascript.svg"
+                          alt=""
+                          className="w-full h-full rounded-sm"
+                        />
+                      </div>
+                    </li>
+                    <li
+                      className={`w-11 rounded-sm absolute top-0 left-16 rotate-3 [transition:all_0.1s_ease-in-out] group-hover:rotate-0 group-hover:translate-x-20`}
+                    >
+                      <div className="w-10 h-10 p-[5px] bg-red-200/20 rounded-lg">
+                        <img
+                          src="/techstack_imgs/nodejs.svg"
+                          alt=""
+                          className="w-full h-full rounded-sm"
+                        />
+                      </div>
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
 
             <div className="flex justify-center absolute bottom-0 m-auto w-full">
-              <div className="flex gap-2 mb-2">
+              <div className="flex gap-2 mb-2 relative">
                 <a
                   className="cursor-pointer border rounded-sm p-1"
                   href={gitHubLink}
@@ -144,16 +193,18 @@ const ProjectsCards = ({
         </Drawer.Portal>
       </Drawer.Root>
       {/* Inner container */}
-      <div className="flex flex-col m-2 z-[-10]">
-        {/* Image container */}
-        <div className="w-full h-full rounded-tl-md rounded-tr-md">
-          <img
-            src={img}
-            alt={`${title(alt)} Project`}
-            className={`rounded-md ${isOpen ? "blur-[1px]" : ""}`}
-          />
+      <a href="https://github.com/barreledout" target="_blank">
+        <div className="flex flex-col m-2 z-[-10]">
+          {/* Image container */}
+          <div className="w-full h-full rounded-tl-md rounded-tr-md">
+            <img
+              src={img}
+              alt={`${title(alt)} Project`}
+              className={`rounded-md ${isOpen ? "blur-[1px]" : ""}`}
+            />
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   );
 };
