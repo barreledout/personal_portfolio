@@ -82,7 +82,7 @@ const ProjectsCards = ({
 
   return (
     <div
-      className="w-full rounded-md text-black relative overflow-hidden border-[1px] dark:border-custom-borderColor/10" //dark:[box-shadow:inset_0_5px_10px_rgba(154,160,185,.05),inset_0_15px_40px_rgba(166,173,201,.02)]
+      className="w-full rounded-md text-black relative overflow-hidden bg-custom-projectContainer-dark-gradient" 
       ref={ref}
     >
       {" "}
@@ -138,7 +138,7 @@ const ProjectsCards = ({
                     </li>
 
                     <li
-                      className={`w-11 rounded-sm absolute top-0 left-5 rotate-[1deg] [transition:all_0.1s_ease-in-out] group-hover:rotate-0 group-hover:translate-x-[28px]`}
+                      className={`w-11 rounded-sm absolute top-0 left-5 rotate-[4deg] [transition:all_0.1s_ease-in-out] group-hover:rotate-0 group-hover:translate-x-[28px]`}
                     >
                       <div className="w-10 h-10 p-[5px] bg-red-200/20 rounded-lg">
                         <img

@@ -87,6 +87,17 @@ const config: Config = {
             opacity: "0",
           },
         },
+        themeIcon: {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "50%": {
+            transform: "rotate(40deg)",
+          },
+          "100%": {
+            transform: "rotate(0deg)",
+          },
+        },
       },
       animation: {
         heroPopUp: "heroPopUp 3s ease-in-out forwards",
@@ -97,6 +108,7 @@ const config: Config = {
         shine: "shine var(--duration) infinite linear",
         learnMore: "learnMore 0.2s ease-in-out forwards",
         learnMoreExit: "learnMoreExit 0.2s ease-in-out forwards",
+        themeIcon: "themeIcon 0.4s ease-in-out",
       },
       colors: {
         accent: {
@@ -114,6 +126,7 @@ const config: Config = {
           containerColor: "hsla(var(--container-color))",
           borderColor: "hsla(var(--border-color))",
           drawerColor: "hsla(var(--drawer-color))",
+          navbarHoverColor: "hsla(var(--navbar-hover))",
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -153,8 +166,12 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        "custom-gradient-light": "linear-gradient(140deg, #fdfcfb, #e2d1c3)", 
-        "custom-gradient-dark": "linear-gradient(250deg, #4d7dcb, #5e8ad2, #565e6b)",
+        "custom-gradient-light":
+          "linear-gradient(320deg, #fdfcfb 30%, #e2d1c3 80%, #cbb4a1)",
+        "custom-gradient-dark":
+          "linear-gradient(-210deg, #1e3c72 1%, #B8DCFF 70%, #2a5298 100%)",
+        "custom-projectContainer-dark-gradient":
+          "linear-gradient(to bottom, #2b2b2b, #171717 100%)",
       },
       fontFamily: {
         satoshi: [`var(--font-satoshi)`, "sans-serif"],
@@ -170,4 +187,3 @@ const config: Config = {
   plugins: [require("tailwindcss-animate")],
 };
 export default config;
-
