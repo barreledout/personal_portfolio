@@ -183,7 +183,7 @@ const ProjectsCards = ({
             <div className="flex justify-center absolute bottom-0 m-auto w-full">
               <div className="flex gap-2 mb-3 relative">
                 <a
-                  className="cursor-pointer rounded-sm p-1 dark:bg-black/10"
+                  className="cursor-pointer rounded-sm p-1 bg-slate-400/10 dark:bg-black/10"
                   href={gitHubLink}
                   target="_blank"
                 >
@@ -197,7 +197,7 @@ const ProjectsCards = ({
                   </div>
                 </a>
                 <a
-                  className="cursor-pointer rounded-sm p-1 dark:bg-black/10"
+                  className="cursor-pointer rounded-sm p-1 bg-slate-400/10 dark:bg-black/10"
                   href={demoLink}
                 >
                   <div className="w-[80px]">
