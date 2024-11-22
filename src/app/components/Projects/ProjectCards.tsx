@@ -3,8 +3,9 @@ import { useRef, useState, useEffect, SyntheticEvent } from "react";
 import { cn } from "@/lib/utils";
 import { Drawer } from "vaul";
 import HoverMoreBtn from "../HoverMoreBtn";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { GeistSans } from "geist/font/sans";
+import { Globe } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 interface ProjectProps {
   children: {
@@ -118,52 +119,59 @@ const ProjectsCards = ({
                 {children.description}
               </Drawer.Description>
               <div className="mt-4 w-full text-left">
-                <h2 className="font-[600] text-[1.1em]">Stack Used:</h2>
+                <h2 className="font-[600] text-[1.1em]">Built With:</h2>
                 <div className="mt-3">
                   <ul className="flex relative w-full">
                     <li
                       className={`w-11 rounded-sm absolute top-0 rotate-[-4deg] [transition:all_0.1s_ease-in-out] group-hover:rotate-0`}
                     >
                       <div
-                        className={`w-10 h-10 p-[5px] bg-red-200/20 rounded-lg`}
+                        className={`w-10 h-10 p-[5px] bg-red-200/20 rounded-lg relative`}
                       >
                         <img
                           src="/techstack_imgs/html.svg"
-                          alt=""
+                          alt="HTML"
                           className="w-full h-full"
+                          title="HTML"
                         />
                       </div>
                     </li>
+
                     <li
                       className={`w-11 rounded-sm absolute top-0 left-5 rotate-[1deg] [transition:all_0.1s_ease-in-out] group-hover:rotate-0 group-hover:translate-x-[28px]`}
                     >
                       <div className="w-10 h-10 p-[5px] bg-red-200/20 rounded-lg">
                         <img
                           src="/techstack_imgs/css.svg"
-                          alt=""
+                          alt="CSS"
                           className="w-full h-full"
+                          title="CSS"
                         />
                       </div>
                     </li>
+
                     <li
                       className={`w-11 rounded-sm absolute top-0 left-10 rotate-4 [transition:all_0.1s_ease-in-out] group-hover:rotate-0 group-hover:translate-x-[56px]`}
                     >
                       <div className="w-10 h-10 p-1 bg-red-200/20 rounded-lg">
                         <img
                           src="/techstack_imgs/javascript.svg"
-                          alt=""
+                          alt="Javascript"
                           className="w-full h-full rounded-sm"
+                          title="Javascript"
                         />
                       </div>
                     </li>
+
                     <li
                       className={`w-11 rounded-sm absolute top-0 left-16 rotate-3 [transition:all_0.1s_ease-in-out] group-hover:rotate-0 group-hover:translate-x-20`}
                     >
                       <div className="w-10 h-10 p-[5px] bg-red-200/20 rounded-lg">
                         <img
                           src="/techstack_imgs/nodejs.svg"
-                          alt=""
+                          alt="Node.js"
                           className="w-full h-full rounded-sm"
+                          title="Node.js"
                         />
                       </div>
                     </li>
@@ -173,19 +181,33 @@ const ProjectsCards = ({
             </div>
 
             <div className="flex justify-center absolute bottom-0 m-auto w-full">
-              <div className="flex gap-2 mb-2 relative">
+              <div className="flex gap-2 mb-3 relative">
                 <a
-                  className="cursor-pointer border rounded-sm p-1"
+                  className="cursor-pointer rounded-sm p-1 dark:bg-black/10"
                   href={gitHubLink}
                   target="_blank"
                 >
-                  GitHub
+                  <div className="w-[80px]">
+                    <div className="flex items-center">
+                      <div>
+                        <FaGithub className=""/>
+                      </div>
+                      <span className={`${GeistSans.className} relative top-[1px]`}>Source</span>
+                    </div>
+                  </div>
                 </a>
                 <a
-                  className="cursor-pointer border rounded-sm p-1"
+                  className="cursor-pointer rounded-sm p-1 dark:bg-black/10"
                   href={demoLink}
                 >
-                  Live Demo
+                  <div className="w-[80px]">
+                    <div className="flex items-center ">
+                      <div>
+                        <Globe size={"17px"}/>
+                      </div>
+                      <span className={`${GeistSans.className} relative right-[9px] top-[1px]`}>Visit</span>
+                    </div>
+                  </div>
                 </a>
               </div>
             </div>
