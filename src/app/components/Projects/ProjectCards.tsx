@@ -82,14 +82,14 @@ const ProjectsCards = ({
 
   return (
     <div
-      className="w-full rounded-md text-black relative overflow-hidden bg-custom-projectContainer-dark-gradient" 
+      className="w-full rounded-md text-black relative overflow-hidden bg-custom-projectContainer-light-gradient dark:bg-custom-projectContainer-dark-gradient"
       ref={ref}
     >
       {" "}
       <Drawer.Root container={container} direction="right" handleOnly={true}>
         <div className="w-full relative flex items-center">
           <Drawer.Trigger
-            className=" m-2 p-[2px] text-custom-fontColor outline-none cursor-pointer w-[110px]"
+            className=" absolute top-2 left-7   text-custom-fontColor outline-none cursor-pointer w-[110px]"
             onClick={handleDrawer}
           >
             <HoverMoreBtn
@@ -190,9 +190,13 @@ const ProjectsCards = ({
                   <div className="w-[80px]">
                     <div className="flex items-center">
                       <div>
-                        <FaGithub className=""/>
+                        <FaGithub className="" />
                       </div>
-                      <span className={`${GeistSans.className} relative top-[1px]`}>Source</span>
+                      <span
+                        className={`${GeistSans.className} relative top-[1px]`}
+                      >
+                        Source
+                      </span>
                     </div>
                   </div>
                 </a>
@@ -203,9 +207,13 @@ const ProjectsCards = ({
                   <div className="w-[80px]">
                     <div className="flex items-center ">
                       <div>
-                        <Globe size={"17px"}/>
+                        <Globe size={"17px"} />
                       </div>
-                      <span className={`${GeistSans.className} relative right-[9px] top-[1px]`}>Visit</span>
+                      <span
+                        className={`${GeistSans.className} relative right-[9px] top-[1px]`}
+                      >
+                        Visit
+                      </span>
                     </div>
                   </div>
                 </a>
@@ -216,9 +224,9 @@ const ProjectsCards = ({
       </Drawer.Root>
       {/* Inner container */}
       <a href="https://github.com/barreledout" target="_blank">
-        <div className="flex flex-col m-2 z-[-10]">
+        <div className="flex flex-col mt-10 z-[-10]">
           {/* Image container */}
-          <div className="w-full h-full rounded-tl-md rounded-tr-md">
+          <div className="w-[600px] h-full rounded-tl-md rounded-tr-md">
             <img
               src={img}
               alt={`${title(alt)} Project`}
