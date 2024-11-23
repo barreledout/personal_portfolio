@@ -171,7 +171,9 @@ const config: Config = {
         "custom-gradient-dark":
           "linear-gradient(-210deg, #1e3c72 1%, #B8DCFF 70%, #2a5298 100%)",
         "custom-projectContainer-dark-gradient":
-          "linear-gradient(to bottom, #2b2b2b, #171717 100%)",
+          "linear-gradient(180deg, #2f2f2f 1%, #222222 8%, #171717 100%)",
+        "custom-projectContainer-light-gradient":
+          "linear-gradient(180deg, #e3e6e8, #f3f4f7 100%)" 
       },
       fontFamily: {
         satoshi: [`var(--font-satoshi)`, "sans-serif"],
