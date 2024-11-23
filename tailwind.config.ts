@@ -88,6 +88,7 @@ const config: Config = {
           },
         },
         themeIcon: {
+          //For the theme button icons (sun and moon)
           "0%": {
             transform: "rotate(0deg)",
           },
@@ -109,6 +110,7 @@ const config: Config = {
         learnMore: "learnMore 0.2s ease-in-out forwards",
         learnMoreExit: "learnMoreExit 0.2s ease-in-out forwards",
         themeIcon: "themeIcon 0.4s ease-in-out",
+        cloudBounce1: "cloudBounce1 0.4s ease-in-out infinte",
       },
       colors: {
         accent: {
@@ -167,13 +169,13 @@ const config: Config = {
       },
       backgroundImage: {
         "custom-gradient-light":
-          "linear-gradient(320deg, #fdfcfb 30%, #e2d1c3 80%, #cbb4a1)",
+          "linear-gradient(-150deg, #cbb4a1, #fdfcfb 40%, #e2d1c3 90%, #cbb4a1)",
         "custom-gradient-dark":
           "linear-gradient(-210deg, #1e3c72 1%, #B8DCFF 70%, #2a5298 100%)",
         "custom-projectContainer-dark-gradient":
           "linear-gradient(180deg, #2f2f2f 1%, #222222 8%, #171717 100%)",
         "custom-projectContainer-light-gradient":
-          "linear-gradient(180deg, #e3e6e8, #f3f4f7 100%)" 
+          "linear-gradient(180deg, #e3e6e8, #f3f4f7 100%)",
       },
       fontFamily: {
         satoshi: [`var(--font-satoshi)`, "sans-serif"],
