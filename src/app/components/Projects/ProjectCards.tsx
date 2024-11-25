@@ -89,7 +89,7 @@ const ProjectsCards = ({
       <Drawer.Root container={container} direction="right" handleOnly={true}>
         <div className="w-full relative flex items-center">
           <Drawer.Trigger
-            className=" absolute top-2 left-7   text-custom-fontColor outline-none cursor-pointer w-[110px]"
+            className=" absolute top-2 left-7 text-custom-fontColor outline-none cursor-pointer w-[110px]"
             onClick={handleDrawer}
           >
             <HoverMoreBtn
