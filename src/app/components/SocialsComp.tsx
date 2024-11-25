@@ -2,8 +2,7 @@
 import { useState } from "react";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { LuGithub } from "react-icons/lu";
-import { AtSign } from "lucide-react";
-
+import { AtSign } from "lucide-react"; 
 import {
   Tooltip,
   TooltipContent,
@@ -23,8 +22,8 @@ interface ResumeProps {
 }
 
 export const GitHub = ({
-  IconClassName = "",
-  A_tagClassName = "",
+  IconClassName,
+  A_tagClassName,
 }: SocialProps) => {
   return (
     <a
@@ -37,10 +36,11 @@ export const GitHub = ({
           <TooltipTrigger>
             <LuGithub
               className={cn(
-                `text-[25px] m-2 [transition:all_0.2s_ease-in-out] hover:scale-110`,
+                `m-1 p-1 transition-transform hover:scale-110`,
                 IconClassName
               )}
               strokeWidth={"2px"}
+              size={"30px"}
             />
           </TooltipTrigger>
           <TooltipContent className="font-[500] dark:bg-custom-containerColor dark:border-0 dark:text-custom-fontColor">
@@ -54,8 +54,8 @@ export const GitHub = ({
 };
 
 export const Email = ({
-  IconClassName = "",
-  A_tagClassName = "",
+  IconClassName,
+  A_tagClassName,
 }: SocialProps) => {
   return (
     <a
@@ -67,10 +67,11 @@ export const Email = ({
           <TooltipTrigger>
             <AtSign
               className={cn(
-                `text-[25px] m-2 [transition:all_0.2s_ease-in-out] hover:scale-110`,
+                `m-1 p-1 transition-transform hover:scale-110 hover:scale-110`,
                 IconClassName
               )}
               strokeWidth={"2px"}
+              size={"30px"}
             />
           </TooltipTrigger>
           <TooltipContent className="font-[500] dark:bg-custom-containerColor dark:border-0 dark:text-custom-fontColor">
