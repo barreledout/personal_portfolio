@@ -1,10 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-
 import useSound from "use-sound";
-
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Loader2 } from "lucide-react";
 
 const Themebutton = () => {
   const [mounted, setMounted] = useState(false);
@@ -16,17 +14,11 @@ const Themebutton = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return <Moon className="w-[40px] h-[40px] opacity-0" />;
-  }
-
   const toggleTheme = () => {
     if (resolvedTheme === "light") {
       setTheme("dark");
       playOn();
-    }
-
-    if (resolvedTheme === "dark") {
+    } else {
       setTheme("light");
       playOff();
     }
@@ -37,15 +29,18 @@ const Themebutton = () => {
       onClick={toggleTheme}
       className="flex justify-center items-center bg-transparent border-[none] w-[40px] h-[40px] cursor-pointer outline-none"
     >
-      {resolvedTheme === "light" ? (
+      {/* if not mounted, render <Loader2 /> as placeholder. */}
+      {!mounted ? (
+        <Loader2 className="h-[25px] w-[25px] animate-spin text-custom-fontColor" />
+      ) : resolvedTheme === "light" ? (
         <Sun
-          className="text-custom-fontColor [transition:all_0.2s_ease-in-out] pt-[2px] animate-themeIcon hover:text-yellow-500 hover:rotate-[20deg]"
+          className="relative bottom-[2px] text-custom-fontColor transition-all duration-300 ease-in-out pt-[2px] animate-themeIcon hover:text-yellow-500 hover:rotate-[20deg]"
           strokeWidth={"2px"}
           size={"25px"}
         />
       ) : (
         <Moon
-          className="text-fontColor [transition:all_0.2s_ease-in-out] animate-themeIcon hover:text-purple-500 hover:rotate-[20deg]"
+          className="text-fontColor transition-all duration-300 ease-in-out animate-themeIcon hover:text-purple-500 hover:rotate-[20deg]"
           strokeWidth={"1.8px"}
           size={"24px"}
         />
