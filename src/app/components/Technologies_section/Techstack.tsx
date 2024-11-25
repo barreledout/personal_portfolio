@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import { variants } from "../FramerMotion/PageWrapper";
 import Cards from "./TechCards";
-import { FaArrowRightLong } from "react-icons/fa6";
 import Modal from "../Modal";
 import H1 from "../H1";
 import HoverMoreBtn from "../HoverMoreBtn";
