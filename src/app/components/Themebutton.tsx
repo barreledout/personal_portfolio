@@ -17,13 +17,7 @@ const Themebutton = () => {
   }, []);
 
   if (!mounted) {
-    const theme = localStorage.getItem("theme");
-
-    if (theme === "dark") {
-      return <Moon className="w-[40px] h-[40px]" />;
-    } else if (theme === "light" || "null") {
-      return <Sun className="w-[40px] h-[50px] " />;
-    }
+    return <Moon className="w-[40px] h-[40px] opacity-0" />;
   }
 
   const toggleTheme = () => {
