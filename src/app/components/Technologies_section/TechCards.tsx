@@ -9,7 +9,7 @@ interface CardProps {
 
 const Cards = ({ language, exp, className, ...props }: CardProps) => {
   return (
-    <div className="w-[200px] bg-custom-containerColor hover:bg-neutral-400/30 dark:bg-custom-containerColor/30 dark:hover:bg-gray-400/10 [transition:all_0.2s_ease-in-out] items-center rounded-md ">
+    <div className="w-[200px] bg-custom-containerColor hover:bg-neutral-400/30 dark:bg-custom-containerColor/30 dark:hover:bg-gray-400/10 items-center rounded-md ">
       {/* inner card */}
       <div className="w-[190px] flex relative m-1 items-center">
         {/* Img container */}
