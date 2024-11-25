@@ -45,6 +45,7 @@ const Themebutton = () => {
           size={"24px"}
         />
       )}
+      <span className="sr-only">Theme button</span>
     </button>
   );
 };
