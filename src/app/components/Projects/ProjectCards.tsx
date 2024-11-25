@@ -82,7 +82,7 @@ const ProjectsCards = ({
 
   return (
     <div
-      className="w-full rounded-md text-black relative overflow-hidden bg-custom-projectContainer-light-gradient dark:bg-custom-projectContainer-dark-gradient"
+      className="w-full mb-5 rounded-md text-black relative overflow-hidden bg-custom-projectContainer-light-gradient dark:bg-custom-projectContainer-dark-gradient"
       ref={ref}
     >
       {" "}
@@ -126,7 +126,7 @@ const ProjectsCards = ({
                       className={`w-11 rounded-sm absolute top-0 rotate-[-4deg] [transition:all_0.1s_ease-in-out] group-hover:rotate-0`}
                     >
                       <div
-                        className={`w-10 h-10 p-[5px] bg-red-200/20 rounded-lg relative`}
+                        className={`w-10 h-10 p-[5px] bg-slate-400/20 dark:bg-red-200/20 rounded-lg relative`}
                       >
                         <img
                           src="/techstack_imgs/html.svg"
@@ -140,7 +140,7 @@ const ProjectsCards = ({
                     <li
                       className={`w-11 rounded-sm absolute top-0 left-5 rotate-[4deg] [transition:all_0.1s_ease-in-out] group-hover:rotate-0 group-hover:translate-x-[28px]`}
                     >
-                      <div className="w-10 h-10 p-[5px] bg-red-200/20 rounded-lg">
+                      <div className="w-10 h-10 p-[5px] bg-slate-400/20 dark:bg-red-200/20 rounded-lg">
                         <img
                           src="/techstack_imgs/css.svg"
                           alt="CSS"
@@ -153,7 +153,7 @@ const ProjectsCards = ({
                     <li
                       className={`w-11 rounded-sm absolute top-0 left-10 rotate-4 [transition:all_0.1s_ease-in-out] group-hover:rotate-0 group-hover:translate-x-[56px]`}
                     >
-                      <div className="w-10 h-10 p-1 bg-red-200/20 rounded-lg">
+                      <div className="w-10 h-10 p-1 bg-slate-400/20 dark:bg-red-200/20 rounded-lg">
                         <img
                           src="/techstack_imgs/javascript.svg"
                           alt="Javascript"
@@ -166,7 +166,7 @@ const ProjectsCards = ({
                     <li
                       className={`w-11 rounded-sm absolute top-0 left-16 rotate-3 [transition:all_0.1s_ease-in-out] group-hover:rotate-0 group-hover:translate-x-20`}
                     >
-                      <div className="w-10 h-10 p-[5px] bg-red-200/20 rounded-lg">
+                      <div className="w-10 h-10 p-[5px] bg-slate-400/20 dark:bg-red-200/20 rounded-lg">
                         <img
                           src="/techstack_imgs/nodejs.svg"
                           alt="Node.js"
@@ -183,7 +183,7 @@ const ProjectsCards = ({
             <div className="flex justify-center absolute bottom-0 m-auto w-full">
               <div className="flex gap-2 mb-3 relative">
                 <a
-                  className="cursor-pointer rounded-sm p-1 bg-slate-400/10 dark:bg-black/10"
+                  className="cursor-pointer rounded-sm p-1 bg-slate-600/10 dark:bg-black/10"
                   href={gitHubLink}
                   target="_blank"
                 >
@@ -201,7 +201,7 @@ const ProjectsCards = ({
                   </div>
                 </a>
                 <a
-                  className="cursor-pointer rounded-sm p-1 bg-slate-400/10 dark:bg-black/10"
+                  className="cursor-pointer rounded-sm p-1 bg-slate-600/10 dark:bg-black/10"
                   href={demoLink}
                 >
                   <div className="w-[80px]">
