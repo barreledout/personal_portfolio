@@ -1,4 +1,4 @@
-import { IconType } from "react-icons/lib";
+import { cn } from "@/lib/utils";
 import {
   Dialog,
   DialogContent,
@@ -9,6 +9,7 @@ import {
 
 interface Props {
   children: React.ReactNode;
+  className?: string;
   _ModalTrigger: React.ReactNode;
   _ModalTitle: React.ReactNode;
   _ModalHeader?: React.ReactNode;
@@ -19,12 +20,18 @@ export const Modal = ({
   _ModalTrigger,
   _ModalTitle,
   _ModalHeader,
+  className,
   ...props
 }: Props) => {
   return (
     <Dialog>
       <DialogTrigger className="">{_ModalTrigger}</DialogTrigger>
-      <DialogContent className="flex flex-col justify-center bg-custom-containerColor text-custom-fontColor dark:border-0">
+      <DialogContent
+        className={cn(
+          `sm:flex sm:flex-col justify-center bg-custom-containerColor text-custom-fontColor dark:border-0 sm:w-full`,
+          className
+        )}
+      >
         <DialogHeader>
           <DialogTitle className="text-center text-[1.4em]">
             {_ModalTitle}

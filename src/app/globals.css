@@ -14,20 +14,26 @@ html {
 }
 
 :root {
-  --background-color: 40, 60%, 98%;
-  --container-color: 40, 20%, 85%;
+  --background-color: 220, 20%, 96%;
+  --container-color: 210, 10%, 90%;
   --font-color: 0, 0%, 0%;
+  --accent-font-color: 270, 20%, 92%;
   --grid-color: hsl(0, 0%, 22%, 0.08);
+  --border-color: 220, 15%, 65%;
+  --drawer-color: 210, 78%, 86%;
+  --navbar-hover: 27, 24%, 66%;
 }
 
 [data-theme="dark"] {
   --background-color: 0, 0%, 9%;
   --container-color: 222, 13%, 19%;
-  --font-color: 0, 0%, 80%;
+  --font-color: 0, 0%, 100%;
+  --accent-font-color: 210, 15%, 90%;
   --grid-color: hsl(0, 1%, 54%, 0.08);
+  --border-color: 220, 15%, 65%;
+  --drawer-color: 210, 40%, 32%;
+  --navbar-hover: 212.8, 43.86%, 66.47%;
 }
-
-
 
 .grid_background {
   position: absolute;

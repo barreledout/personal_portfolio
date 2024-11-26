@@ -24,18 +24,20 @@ const Techstack = () => {
   return (
     <motion.div
       variants={variants}
-      className="font-[400] text-custom-fontColor w-full"
+      className="font-[400] text-custom-fontColor w-full
+      max-w-[400px] sm:max-w-[650px]"
     >
-      <div className="max-w-[650px]">
-        <div className="flex justify-between items-center">
+      <div className="">
+        <div className="flex justify-between items-center ">
           <H1 className="">Current Tech Stack</H1>
           <Modal
             _ModalTitle="Other Technologies"
             _ModalTrigger={
-              <HoverMoreBtn title="View More"/>
+              <HoverMoreBtn title="View More" className="relative bottom-1 left-3 sm:left-4"/>
             }
+            className=""
           >
-            <div className="grid grid-cols-3 items-center gap-2 ">
+            <div className="grid grid-cols-2 sm:grid-cols-3 items-center gap-2 ">
               {OtherStack.map(([lang, exp], index) => (
                 <div key={index}>
                   <Cards language={lang} exp={exp} className="rounded-sm" />
@@ -44,7 +46,7 @@ const Techstack = () => {
             </div>
           </Modal>
         </div>
-        <div className="grid grid-cols-3 items-center gap-2">
+        <div className="grid grid-cols-2 items-center gap-[9px] sm:grid-cols-3 sm:gap-2">
           {CurrentStack.map(([lang, exp], index) => (
             <div key={index}>
               <Cards language={lang} exp={exp} />

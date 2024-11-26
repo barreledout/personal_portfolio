@@ -10,6 +10,9 @@ const config: Config = {
   darkMode: ["class", '[data-theme="dark"]'],
   theme: {
     extend: {
+      screens: {
+        
+      },
       keyframes: {
         heroPopUp: {
           "0%": {
@@ -179,7 +182,7 @@ const config: Config = {
       },
       fontFamily: {
         satoshi: [`var(--font-satoshi)`, "sans-serif"],
-        geistSans: ["var(--font-geist-sans)"],
+        geistSans: ["var(--font-geist-sans)", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
