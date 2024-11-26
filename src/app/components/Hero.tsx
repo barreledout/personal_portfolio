@@ -36,11 +36,11 @@ const Hero: React.FC = () => {
         <div className="mt-[4rem] flex flex-col ">
           <H1 className="mb-1.5">About Me</H1>
           {/* Make a better bio */}
-          <p
-            className={`text-pretty font-[300] text-[1.1em] ${GeistSans.className}`}
+          <p 
+            className={`text-pretty font-[300] sm:text-[1.1em] ${GeistSans.className}`}
           >
             I am self-taught programmer interested in full stack web development
-            with <br />
+            with <br className="hidden sm:block"/>
             <span className="font-[500] text-custom-navbarHoverColor dark:text-blue-300">
               zero work experience
             </span>
