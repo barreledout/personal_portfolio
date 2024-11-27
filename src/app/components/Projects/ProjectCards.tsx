@@ -10,7 +10,8 @@ import { useMediaQuery } from "react-responsive";
 
 interface ProjectProps {
   children: {
-    description: React.ReactNode;
+    LargeScreenDescription: React.ReactNode;
+    SmallScreenDescription: React.ReactNode;
     stack?: string[];
   };
   alt: string;
@@ -20,6 +21,7 @@ interface ProjectProps {
   demoLink?: string;
 }
 
+// For screens with min-width of 640px
 const LargeScreenProjectsCards = ({
   children,
   img,
@@ -117,7 +119,7 @@ const LargeScreenProjectsCards = ({
                 className={`text-left ${GeistSans.className} font-[300] dark:text-custom-accentFontColor`}
                 asChild
               >
-                {children.description}
+                {children.LargeScreenDescription}
               </Drawer.Description>
               <div className="mt-4 w-full text-left">
                 <h2 className="font-[600] text-[1.1em]">Built With:</h2>
@@ -240,6 +242,7 @@ const LargeScreenProjectsCards = ({
   );
 };
 
+// For screens with width less than 640px
 const SmallScreenProjectCards = ({
   children,
   img,
@@ -259,11 +262,31 @@ const SmallScreenProjectCards = ({
           <img src={img} alt={alt} className="rounded-md" />
         </a>
         <div className="mt-2">
-          <div className={`text-custom-fontColor ${GeistSans.className} text-[1.4em]`}>
+          <div className={`text-custom-fontColor text-[1.5em] font-[500]`}>
             {title(alt)}
           </div>
-          <div className="">
-
+          <div
+            className={`${GeistSans.className} text-custom-fontColor text-[1em] text-left w-full max-h-[100px] mt-1`}
+          >
+            {children.SmallScreenDescription}
+          </div>
+          <div className="flex items-center relative">
+            <ul className="flex items-center w-[200px] gap-1 mt-3">
+              {children.stack?.map((lang, index) => (
+                <li className="list-none" key={index}>
+                  <div className="w-10 h-10 border rounded-sm">
+                    <img
+                      src={`/techstack_imgs/${lang}.svg`}
+                      alt={lang}
+                      className="w-full h-full rounded-sm p-1"
+                    />
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <div className="absolute right-0 top-3 w-[120px] h-[40px] bg-green-400">
+              hfe
+            </div>
           </div>
         </div>
       </div>
