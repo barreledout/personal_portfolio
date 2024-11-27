@@ -28,7 +28,7 @@ export const Modal = ({
       <DialogTrigger className="">{_ModalTrigger}</DialogTrigger>
       <DialogContent
         className={cn(
-          `sm:flex sm:flex-col justify-center bg-custom-containerColor text-custom-fontColor dark:border-0 sm:w-full`,
+          `w-[400px] rounded-md sm:w-full sm:flex sm:flex-col sm:w-full justify-center bg-custom-containerColor text-custom-fontColor dark:border-0 `,
           className
         )}
       >
