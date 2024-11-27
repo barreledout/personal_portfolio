@@ -256,17 +256,17 @@ const SmallScreenProjectCards = ({
   };
 
   return (
-    <div className="mb-5 rounded-md text-black overflow-hidden bg-custom-containerColor dark:bg-custom-containerColor">
+    <div className="mb-5 rounded-md text-black overflow-hidden bg-custom-containerColor dark:bg-custom-containerColor ">
       <div className="p-3 ">
-        <a href={gitHubLink} className="">
+        <a href={gitHubLink} className="" target="_blank">
           <img src={img} alt={alt} className="rounded-md" />
         </a>
         <div className="mt-2">
-          <div className={`text-custom-fontColor text-[1.5em] font-[500]`}>
+          <div className={`text-custom-fontColor text-[1.5em] font-[700]`}>
             {title(alt)}
           </div>
           <div
-            className={`${GeistSans.className} text-custom-fontColor text-[1em] text-left w-full max-h-[100px] mt-1`}
+            className={`${GeistSans.className} text-custom-fontColor text-[1em] text-left w-full max-h-[100px]`}
           >
             {children.SmallScreenDescription}
           </div>
@@ -274,7 +274,7 @@ const SmallScreenProjectCards = ({
             <ul className="flex items-center w-[200px] gap-1 mt-3">
               {children.stack?.map((lang, index) => (
                 <li className="list-none" key={index}>
-                  <div className="w-10 h-10 border rounded-sm">
+                  <div className="w-10 h-10 bg-slate-500/15 dark:bg-blue-200/20 rounded-sm">
                     <img
                       src={`/techstack_imgs/${lang}.svg`}
                       alt={lang}
@@ -284,8 +284,25 @@ const SmallScreenProjectCards = ({
                 </li>
               ))}
             </ul>
-            <div className="absolute right-0 top-3 w-[120px] h-[40px] bg-green-400">
-              hfe
+            <div className="absolute right-0 top-3 flex w-[120px] h-[40px] ">
+              <div className="bg-slate-500/15 dark:bg-blue-200/20 rounded-sm w-[40px]">
+                <a href={gitHubLink} target="_blank">
+                  <FaGithub
+                    className="relative top-[5px] text-custom-fontColor/70 dark:text-custom-fontColor/80"
+                    size={"28px"}
+                  />
+                </a>
+                <span className="sr-only">Github</span>
+              </div>
+              <div className="bg-slate-500/15 dark:bg-blue-200/20 rounded-sm w-[40px]">
+                <a href="" target="_blank">
+                  <Globe
+                    className="relative top-[5px] text-custom-fontColor/70 dark:text-custom-fontColor/80"
+                    size={"28px"}
+                  />
+                </a>
+                <span className="sr-only">Demo</span>
+              </div>
             </div>
           </div>
         </div>
