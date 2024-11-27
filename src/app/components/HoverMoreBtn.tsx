@@ -25,7 +25,7 @@ const HoverMoreBtn = ({ title, className }: HoverMoreBtnProps) => {
       onMouseLeave={handleMouseLeave}
     >
       {title}
-      <FaArrowRightLong className={`opacity-0 ${isHovering ? 'group-hover:animate-learnMore' : 'animate-learnMoreExit'}`} />
+      <FaArrowRightLong className={`hidden sm:block opacity-0 ${isHovering ? 'group-hover:animate-learnMore' : 'animate-learnMoreExit'}`} />
     </span>
   );
 };
