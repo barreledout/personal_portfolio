@@ -8,7 +8,7 @@ import { variants } from "../FramerMotion/PageWrapper";
 const Projects = () => {
   return (
     <motion.div variants={variants} className="w-full mb-20" id="projects">
-      <div className="max-w-[650px]">
+      <div className="w-[400px] sm:w-[650px]">
         <div className="flex justify-between items-center gap-2">
           <H1 className="">Current Projects</H1>
         </div>
@@ -16,15 +16,20 @@ const Projects = () => {
           <ProjectsCards
             alt="abode"
             img="/ProjectImgs/abode.png"
-            status="WIP"
             gitHubLink="https://github.com/barreledout"
           >
             {{
-              description: (
+              LargeScreenDescription: (
                 <p>
                   A real estate website inspired by Zillow. Allows users to
                   input their property to receive a price evaluation on their
                   home based on comparable properties nearby.
+                </p>
+              ),
+              SmallScreenDescription: (
+                <p>
+                  A real estate website that allows users to get a price
+                  evaluation of their home.
                 </p>
               ),
               stack: [`html`, `css`, `javascript`, `nodejs`],
