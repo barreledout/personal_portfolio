@@ -14,7 +14,7 @@ const Footer = () => {
         <nav className="">
           <ul className="list-none flex pt-1 sm:pt-0">
             <li>
-              <Themebutton/>
+              <Themebutton />
             </li>
             <li>
               <Email />
