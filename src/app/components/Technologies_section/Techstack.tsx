@@ -33,7 +33,7 @@ const Techstack = () => {
           <Modal
             _ModalTitle="Other Technologies"
             _ModalTrigger={
-              <HoverMoreBtn title="View More" className="relative bottom-1 left-3 sm:left-4"/>
+              <HoverMoreBtn title="View More" className="relative bottom-1 sm:left-4"/>
             }
             className=""
           >
