@@ -6,6 +6,7 @@ import HoverMoreBtn from "../HoverMoreBtn";
 import { GeistSans } from "geist/font/sans";
 import { Globe } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
 
 interface ProjectProps {
   children: {
@@ -14,12 +15,12 @@ interface ProjectProps {
   };
   alt: string;
   img: string;
-  status: string;
+  status?: string;
   gitHubLink: string;
   demoLink?: string;
 }
 
-const ProjectsCards = ({
+const LargeScreenProjectsCards = ({
   children,
   img,
   alt,
@@ -223,10 +224,10 @@ const ProjectsCards = ({
         </Drawer.Portal>
       </Drawer.Root>
       {/* Inner container */}
-      <a href="https://github.com/barreledout" target="_blank">
+      <a href={gitHubLink} target="_blank">
         <div className="flex flex-col mt-10 z-[-10]">
           {/* Image container */}
-          <div className="w-[600px] h-full rounded-tl-md rounded-tr-md">
+          <div className="mx-3 h-full rounded-tl-md rounded-tr-md w-[600px] mx-auto ">
             <img
               src={img}
               alt={`${title(alt)} Project`}
@@ -239,4 +240,74 @@ const ProjectsCards = ({
   );
 };
 
-export default ProjectsCards;
+const SmallScreenProjectCards = ({
+  children,
+  img,
+  alt,
+  status,
+  gitHubLink,
+  demoLink,
+}: ProjectProps) => {
+  const title = (alt: string) => {
+    return alt.charAt(0).toUpperCase() + alt.slice(1);
+  };
+
+  return (
+    <div className="mb-5 rounded-md text-black overflow-hidden bg-custom-containerColor dark:bg-custom-containerColor">
+      <div className="p-3 ">
+        <a href={gitHubLink} className="">
+          <img src={img} alt={alt} className="rounded-md" />
+        </a>
+        <div className="mt-2">
+          <div className={`text-custom-fontColor ${GeistSans.className} text-[1.4em]`}>
+            {title(alt)}
+          </div>
+          <div className="">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ProjectCards = ({
+  children,
+  img,
+  alt,
+  status,
+  gitHubLink,
+  demoLink,
+}: ProjectProps) => {
+  const [isHydrated, setIsHydrated] = useState(false);
+  const isLargeScreen: boolean = useMediaQuery({ query: "(min-width: 640px)" });
+
+  useEffect(() => {
+    setIsHydrated(true); // Ensure rendering happens only after hydration
+  }, []);
+
+  // Only render after hydration to avoid mismatches
+  if (!isHydrated) return null;
+
+  return (
+    <>
+      {isLargeScreen ? (
+        <LargeScreenProjectsCards
+          children={children}
+          img={img}
+          alt={alt}
+          gitHubLink={gitHubLink}
+        />
+      ) : (
+        <SmallScreenProjectCards
+          children={children}
+          img={img}
+          alt={alt}
+          gitHubLink={gitHubLink}
+        />
+      )}
+    </>
+  );
+};
+
+export default ProjectCards;
